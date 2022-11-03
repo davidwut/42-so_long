@@ -41,4 +41,8 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+run:		all
+			@echo "Running $(NAME)"
+			./$(NAME)
+
+.PHONY: all clean fclean re run
