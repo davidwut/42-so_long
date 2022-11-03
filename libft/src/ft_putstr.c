@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 12:03:08 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/03 12:13:06 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/07/05 16:37:23 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/10/29 13:52:23 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/libft.h"
 
-int main(void)
+void	ft_putstr(char *str)
 {
-	void	*mlx_ptr;
-
-	mlx_ptr = mlx_init();
-	mlx_destroy_display(mlx_ptr);
-	free(mlx_ptr);
-
-	ft_printf("success\n");
+	if (str)
+		write(1, str, ft_strlen(str));
 }

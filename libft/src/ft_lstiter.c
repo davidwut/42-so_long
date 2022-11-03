@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 12:03:08 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/03 12:13:06 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/07/08 17:03:54 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/10/29 13:52:24 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/libft.h"
 
-int main(void)
+void	ft_lstiter(t_list *list, void (*f)(void *))
 {
-	void	*mlx_ptr;
-
-	mlx_ptr = mlx_init();
-	mlx_destroy_display(mlx_ptr);
-	free(mlx_ptr);
-
-	ft_printf("success\n");
+	while (list)
+	{
+		f(list->content);
+		list = list->next;
+	}
 }

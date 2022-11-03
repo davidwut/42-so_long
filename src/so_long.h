@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 12:03:08 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/03 12:13:06 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/11/03 11:37:16 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/11/03 12:11:44 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-int main(void)
-{
-	void	*mlx_ptr;
+# include "../libft/include/libft.h"
+# include <mlx.h>
+# include <fcntl.h>
+# include <math.h>
+# include <stdlib.h>
 
-	mlx_ptr = mlx_init();
-	mlx_destroy_display(mlx_ptr);
-	free(mlx_ptr);
-
-	ft_printf("success\n");
-}
+#endif

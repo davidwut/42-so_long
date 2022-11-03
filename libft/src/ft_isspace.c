@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 12:03:08 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/03 12:13:06 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/07/05 18:59:31 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/10/29 13:52:23 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/libft.h"
 
-int main(void)
+int	ft_isspace(int c)
 {
-	void	*mlx_ptr;
-
-	mlx_ptr = mlx_init();
-	mlx_destroy_display(mlx_ptr);
-	free(mlx_ptr);
-
-	ft_printf("success\n");
+	return (c == ' ' || c == '\f' || c == '\n' \
+			|| c == '\r' || c == '\t' || c == '\v');
 }
