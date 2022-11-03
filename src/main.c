@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:03:08 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/03 13:49:34 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/11/03 14:23:32 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,17 @@ int	handle_no_event(void *data)
 
 int	handle_keypress(int keysym, t_data *data)
 {
-	ft_printf("Key press: [%c] %d\n", keysym, keysym);
-	if (keysym == XK_Escape)
-		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	(void) data;
+	ft_printf("Key press: %d\n", keysym);
 	return (0);
 }
 
 int	handle_keyrelease(int keysym, t_data *data)
 {
 	(void) data;
-	ft_printf("Key release: [%c] %d\n", keysym, keysym);
+	ft_printf("Key release: %d\n", keysym);
+	if (keysym == XK_Escape)
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	return (0);
 }
 
