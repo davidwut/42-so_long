@@ -6,27 +6,79 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:42:29 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/05 16:25:32 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/11/07 00:15:22 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KEYCODES_H
 # define KEYCODES_H
 
-# define WINDOW_WIDTH 1920
-# define WINDOW_HEIGHT 1080
-# define MLX_ERROR 0
-# define MLX_SUCCESS 1
-
-enum {
-	ON_KEYDOWN = 2,
-	ON_KEYUP = 3,
-	ON_MOUSEDOWN = 4,
-	ON_MOUSEUP = 5,
+enum e_events {
+	ON_KEYPRESS = 2,
+	ON_KEYRELEASE = 3,
+	ON_MOUSEPRESS = 4,
+	ON_MOUSERELEASE = 5,
 	ON_MOUSEMOVE = 6,
+	ON_ENTER,
+	ON_LEAVE,
+	ON_FOCUSIN,
+	ON_FOCUSOUT,
+	ON_KEYMAP,
 	ON_EXPOSE = 12,
-	ON_DESTROY = 17
+	ON_GRAPHICS,
+	ON_NOEXPOSE,
+	ON_VISIBILITY,
+	ON_CREATE,
+	ON_DESTROY = 17,
+	ON_UNMAP,
+	ON_MAP,
+	ON_MAPREQUEST,
+	ON_REPARENT,
+	ON_CONFIGURE,
+	ON_CONFIGUREREQUEST,
+	ON_GRAVITY,
+	ON_RESIZE,
+	ON_CIRCULATE,
+	ON_CIRCULATE_REQUEST,
+	ON_PROPERTY,
+	ON_SELECTION_CLEAR,
+	ON_SELECTION_REQUEST,
+	ON_SELECTION_NOTIFY,
+	ON_COLORMAP,
+	ON_CLIENT_MESSAGE,
+	ON_MAPPING,
+	ON_GENERIC,
+	ON_LAST
 };
+/* only needed on linux/wsl, doesn't matter on macos
+   norminette doesn't allow macros with expressions ex: (1L << 8)
+*/
+# define NO_EVENT_MASK 0L
+# define KEY_PRESS_MASK 1L
+# define KEY_RELEASE_MASK 2L
+# define BUTTON_PRESS_MASK 4L
+# define BUTTON_RELEASE_MASK 8L
+# define ENTER_WINDOW_MASK 16L
+# define LEAVE_WINDOW_MASK 32L
+# define POINTER_MOTION_MASK 64L
+# define POINTER_MOTION_HINT_MASK 128L
+# define BUTTON1_MOTION_MASK 256L
+# define BUTTON2_MOTION_MASK 512L
+# define BUTTON3_MOTION_MASK 1024L
+# define MUTTON4_MOTION_MASK 2048L
+# define BUTTON5_MOTION_MASK 4096L
+# define BUTTON_MOTION_MASK 8192L
+# define KEYMAP_STATE_MASK 16384L
+# define EXPOSURE_MASK 32768L
+# define VISIBILITY_CHANGE_MASK 65536L
+# define STRUCTURE_NOTIFY_MASK 131072L
+# define RESIZE_REDIRECT_MASK 262144L
+# define SUBSTRUCTURE_MODIFY_MASK 524288L
+# define SUBSTRUCTURE_REDIRECT_MASK 1048576L
+# define FOCUS_CHANGE_MASK 2097152L
+# define PROPERTY_CHANGE_MASK 4194304L
+# define COLOR_MAP_CHANGE_MASK 8388608L
+# define OWNER_GRABBUTTON_MASK 16777216L
 
 # ifdef __APPLE__
 #  define KEY_ESC 53
@@ -86,6 +138,7 @@ enum {
 #  define KEY_9 25
 
 # elif __linux__
+
 #  define KEY_ESC 65307
 #  define KEY_ENTER 65293
 #  define KEY_PAGEUP 65365
