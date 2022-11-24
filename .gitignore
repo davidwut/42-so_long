@@ -6,3 +6,4 @@
 *.o
 .DS_STORE
 *dSYM*
+libft/libft.a
