@@ -6,15 +6,35 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:41:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/24 23:50:10 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:44:20 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+int	_valid_path(t_map *map, int x, int y)
+{
+
+}
+
 int	valid_path(t_map *map)
 {
-	(void) map;
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < map->height)
+	{
+		j = -1;
+		while (++j < map->width)
+		{
+			if (map->map[i][j] == START_C)
+				set_pos(&map->start, i, j);
+			else if(map->map[i][j] == EXIT_C)
+				set_pos(&map->exit, i, j);
+		}
+	}
+
 	return (1);
 }
 
@@ -31,9 +51,9 @@ int	valid_borders(t_map *map)
 	collectible = 0;
 	while (++i < map->height)
 	{
-		exit += (NULL != ft_strchr((const char *)(map->map[i]), 'E'));
-		startpos += (NULL != ft_strchr((const char *)(map->map[i]), 'P'));
-		collectible += (NULL != ft_strchr((const char *)(map->map[i]), 'C'));
+		exit += (NULL != ft_strchr((const char *)(map->map[i]), EXIT_C));
+		startpos += (NULL != ft_strchr((const char *)(map->map[i]), START_C));
+		collectible += (NULL != ft_strchr((const char *)(map->map[i]), COLLECT_C));
 		if (map->map[i][0] != '1'
 			|| map->map[i][map->width - 1] != '1')
 			return (0);

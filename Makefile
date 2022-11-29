@@ -8,7 +8,7 @@ LIBFT_NAME	:= libft.a
 LIBFT_DIR	:= libft
 LIBFT		:= $(LIBFT_DIR)/$(LIBFT_NAME)
 
-SYS			:= LINUX
+SYS			:= DARWIN
 DEFINES		:= -D$(SYS)
 
 MLIB		:= libmlx_Linux.a

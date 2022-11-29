@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 16:58:30 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/24 23:51:13 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:30:25 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int	load_maps(t_game *game, int ac, char **av)
 
 int	load_sprites(t_game *game)
 {
-
+	(void)game;
+	return 1;
 }
 
 int	init(t_game *game, int ac, char **av)

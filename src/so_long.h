@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:37:16 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/24 23:51:00 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:43:33 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,17 @@
 # define MLX_ERROR 0
 # define MLX_SUCCESS 1
 
+# define START_C 'P'
+# define EXIT_C 'E'
+# define COLLECT_C 'C'
+
 # define VALID_TILES "01CEP"
 
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}	t_pos;
 typedef struct s_image
 {
 	void	*img;
@@ -46,6 +55,8 @@ typedef struct s_map
 {
 	int	width;
 	int	height;
+	t_pos	start;
+	t_pos	exit;
 	char **map;
 }	t_map;
 
@@ -57,12 +68,6 @@ typedef struct s_game
 	t_map	**levels;
 	int		levelcount;
 }	t_game;
-
-typedef struct s_pos
-{
-	int	x;
-	int	y;
-}	t_pos;
 
 typedef struct s_player
 {
@@ -81,7 +86,7 @@ int		get_b(int trgb);
 int	init(t_game *game, int ac, char **argv);
 int	init_mlx_ptr(t_game *game);
 int	load_maps(t_game *game, int ac, char **av);
-int	load_sprites(t_game);
+int	load_sprites(t_game *game);
 
 /* event_handler.c */
 void	close_window(t_game *game);
@@ -104,5 +109,9 @@ int	valid_line(char *line, int len);
 int	valid_map(t_map *map);
 int	valid_path(t_map *map);
 int	valid_borders(t_map *map);
+int	_valid_path(t_map *map, int x, int y);
+
+/* pos_utils.c */
+void	set_pos(t_pos *pos, int x, int y);
 
 #endif
