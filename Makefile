@@ -8,7 +8,7 @@ LIBFT_NAME	:= libft.a
 LIBFT_DIR	:= libft
 LIBFT		:= $(LIBFT_DIR)/$(LIBFT_NAME)
 
-SYS			:= DARWIN
+SYS			:= DARWINk
 DEFINES		:= -D$(SYS)
 
 MLIB		:= libmlx_Linux.a
@@ -56,6 +56,6 @@ re:			fclean all
 
 run:		all
 			@echo "Running $(NAME)"
-			./$(NAME)
+			./$(NAME) maps/*
 
 .PHONY: all clean fclean re run

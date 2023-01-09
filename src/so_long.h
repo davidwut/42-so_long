@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:37:16 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/29 14:43:33 by dwuthric         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:50:34 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include "../libft/include/libft.h"
+# include "../libft/include/vector.h"
 # include "keycodes.h"
 
 # include <fcntl.h>
@@ -42,6 +43,7 @@ typedef struct s_pos
 	int	x;
 	int	y;
 }	t_pos;
+
 typedef struct s_image
 {
 	void	*img;

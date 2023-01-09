@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:41:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/11/29 14:44:20 by dwuthric         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:12:57 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	_valid_path(t_map *map, int x, int y)
 {
-
+	(void)x;
+	(void)y;
+	(void) map;
+	return (0);
 }
 
 int	valid_path(t_map *map)
